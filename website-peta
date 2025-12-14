@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prototype Peta Kontak (Mock)</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    #app { display: grid; grid-template-columns: 280px 1fr; height: 100vh; }
+    #sidebar { padding: 12px; border-right: 1px solid #ddd; }
+    #map { height: 100%; }
+    .contact { padding: 8px; border-radius: 8px; cursor: pointer; }
+    .contact:hover { background: #f3f3f3; }
+    .hint { font-size: 12px; color: #666; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="sidebar">
+      <h3>Kontak (Contoh)</h3>
+      <div class="contact" onclick="focusMarker(0)">Ibu</div>
+      <div class="contact" onclick="focusMarker(1)">Ayah</div>
+      <div class="contact" onclick="focusMarker(2)">Teman</div>
+      <div class="hint">* Ini hanya PROTOTYPE dengan lokasi palsu (mock). Tidak melacak nomor asli.</div>
+    </div>
+    <div id="map"></div>
+  </div>  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>  <script>
+    const map = L.map('map').setView
